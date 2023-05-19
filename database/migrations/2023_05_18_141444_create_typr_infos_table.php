@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('typr_infos', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->integer('id_type');
+            $table->varchar('type');
         });
     }
 
