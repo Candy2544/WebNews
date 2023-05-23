@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\InfoController;
 use App\Http\Controllers\DepartmentController;
 use Illuminate\Support\Facades\Route;
 //path db builder
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use Illuminate\Contracts\Cache\Store;
+use App\Http\Controllers\UploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,4 +41,9 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 
 Route::get('/department/all',[DepartmentController::class,'index']) ->name('department');
 Route::post('/department/add',[DepartmentController::class,'store']) -> name('addDepartment');
+Route::get('/info',[InfoController::class,'index']);
+
+Route::get('/info/all',[InfoController::class,'index']) ->name('info');
+Route::get('/info/add',[UploadController::class,'index']) -> name('addInfo');
+Route::post('/info/add',[UploadController::class,'news']) -> name('addInfo');
 

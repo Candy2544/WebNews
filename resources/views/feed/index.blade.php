@@ -12,20 +12,25 @@
                     <thead>
                         <tr>
                             <th scope="col">ลำดับ</th>
-                            <th scope="col">ชื่อ</th>
-                            <th scope="col">อีเมล</th>
-                            <th scope="col">เริ่มใช้งานระบบ</th>
+                            <th scope="col">เรื่อง</th>
+                            <th scope="col">เนื้อหา</th>
+                            <th scope="col">ชื่อคนเขียน</th>
+                            <th scope="col">สร้างเมื่อ</th>
                         </tr>
                     </thead>
                     <tbody>
                         @php($i=1)
-                        @foreach($user as $row)
+                        @foreach($info as $row)
                         <tr>
                             <td>{{$i++}}</td>
                             <?// เอาข้อมูลมาจาก row จาก คอลัม name?>
-                            <td>{{$row -> name}}</td>
+                            <td>{{$row -> id_info}}</td>
                             <?// เอาข้อมูลมาจาก row จาก คอลัม email?>
-                            <td>{{$row -> email}}</td>
+                            <td>{{$row -> title}}</td>
+                            <?// เอาข้อมูลมาจาก row จาก คอลัม email?>
+                            <td>{{$row -> content}}</td>
+                            <?// เอาข้อมูลมาจาก row จาก คอลัม email?>
+                            <td>{{$row -> other_name}}</td>
                             <td>{{Carbon\Carbon::parse($row -> created_at -> diffForHumans())}}</td>
                         </tr>
                         @endforeach

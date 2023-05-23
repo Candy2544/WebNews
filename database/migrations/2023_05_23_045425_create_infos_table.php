@@ -9,13 +9,14 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+
+      public function up(): void
     {
         Schema::create('infos', function (Blueprint $table) {
             $table->integer('id_info');
-            $table->integer('id_type');
             $table->text('title');
             $table->text('content');
+            $table->text('other_name');
             $table->softDeletes();
         });
     }

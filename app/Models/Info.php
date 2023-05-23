@@ -8,13 +8,17 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Info extends Model
 {
+
+  
     use HasFactory;
     use SoftDeletes;
 
     protected $fillable = [
         'id_info',
-        'id_type',
         'title',
         'content',
+        'other_name',
     ];
+
+
 }
