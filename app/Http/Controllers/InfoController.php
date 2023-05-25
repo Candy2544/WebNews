@@ -9,7 +9,7 @@ use PharIo\Manifest\Author;
 
 class InfoController extends Controller
 {
-    public function index(){
+    public function index($info){
         $info = Info::all();
         return view('feed.index',compact('info'));
     }
@@ -24,11 +24,6 @@ class InfoController extends Controller
         ]
     );
 
-    $info = new Info;
-    $info->department_name = $request->department_name;
-    $info->user_id = Auth::user()->id;
-    $info->save();
-    return redirect()->back()->with('sucess', 'บันทึกข้อมูลแล้ว');
     }
 
     public function getinfo() {

@@ -2,6 +2,7 @@
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             Wellcome , {{Auth::user()->name}}
+            
         </h2>
     </x-slot>
 
@@ -25,11 +26,11 @@
                             <td>{{$i++}}</td>
                             <?// เอาข้อมูลมาจาก row จาก คอลัม name?>
                             <td>{{$row -> id_info}}</td>
-                            <?// เอาข้อมูลมาจาก row จาก คอลัม email?>
+                            <?// เอาข้อมูลมาจาก row จาก คอลัม title?>
                             <td>{{$row -> title}}</td>
-                            <?// เอาข้อมูลมาจาก row จาก คอลัม email?>
+                            <?// เอาข้อมูลมาจาก row จาก คอลัม content?>
                             <td>{{$row -> content}}</td>
-                            <?// เอาข้อมูลมาจาก row จาก คอลัม email?>
+                            <?// เอาข้อมูลมาจาก row จาก คอลัม other_name?>
                             <td>{{$row -> other_name}}</td>
                             <td>{{Carbon\Carbon::parse($row -> created_at -> diffForHumans())}}</td>
                         </tr>

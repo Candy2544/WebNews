@@ -8,10 +8,10 @@ use Illuminate\Http\Request;
 
 class UploadController extends Controller
 {
-    public function index($info)
+    public function index()
     {
 
-        return view('feed.upload', compact('info'));
+        return view('feed.upload');
     }
 
     // save data
@@ -21,9 +21,9 @@ class UploadController extends Controller
         $info->title = $request->input('subject');
         $info->content = $request->input('content');
         $info->other_name = $request->input('other');
-        $info->id = Auth::user();
         $info->save();
-        return redirect()->route('feed.index')->with('success');
+        return view('feed.index');
+        // return redirect()->route('feed.index')->with('success');
 
         // $subject = $request->input('subject');
         // $content = $request->input('content');

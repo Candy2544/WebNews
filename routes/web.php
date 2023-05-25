@@ -38,11 +38,10 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 //     return view('dashboard', compact('users'));
 // })->name('dashboard');
 
-
-// Route::get('/department/all',[DepartmentController::class,'index']) ->name('department');
-// Route::post('/department/add',[DepartmentController::class,'store']) -> name('addDepartment');
+//require data form database 
 Route::get('/info',[InfoController::class,'index']);
-
 Route::get('/info/all',[InfoController::class,'index']) ->name('info');
-Route::post('/info/add',[UploadController::class,'update']) -> name('addInfo');
 
+//upload data to database
+Route::get('/info',[UploadController::class,'index']) -> name('addInfo');
+Route::post('/info/upload',[UploadController::class,'update']) -> name('upload');

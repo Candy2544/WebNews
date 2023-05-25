@@ -39,7 +39,7 @@
         <div class="card">
             <div class="card-header">แบบฟอร์ม</div>
             <div class="card-body">
-                <form action="{{route('addInfo')}}" method="post"> <!-- ตารางนี้จะทำการ action ไปที่ route addDepartment เป็นการส่งแบบ post  -->
+                <form action="{{route('upload')}}" method="post"> <!-- ตารางนี้จะทำการ action ไปที่ route addDepartment เป็นการส่งแบบ post  -->
                     @csrf
                     <div class="from-group">
                         <label for="department_name">ข่าว</label>
@@ -51,7 +51,6 @@
                     </div>
                     <input type="submit" value="บันทึก" class="btn btn-primary">
                 </form>
-                {{$info}}
             </div>
         </div>
     </div>
