@@ -2,28 +2,29 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use App\Models\Info;
 use Illuminate\Http\Request;
 
 class UploadController extends Controller
 {
-    public function index() {
-        return view('feed.upload');
+    public function index($info)
+    {
+
+        return view('feed.upload', compact('info'));
     }
-    public function update(Request $request,$id) {
-            $request->validate([
-                'subject' => 'required',
-                'content' => 'required',
-                'other' => 'required',
-            ]);
-            
-            $info = Info::find($id);
-            $info->subject = $request->subject;
-            $info->content = $request->content;
-            $info->auther = $request->auther;
-            $info->save();
-            return redirect()->route('feed.index')->with('success');
-            
+
+    // save data
+    public function update(Request $request)
+    {
+        $info = new Info;
+        $info->title = $request->input('subject');
+        $info->content = $request->input('content');
+        $info->other_name = $request->input('other');
+        $info->id = Auth::user();
+        $info->save();
+        return redirect()->route('feed.index')->with('success');
+
         // $subject = $request->input('subject');
         // $content = $request->input('content');
         // $author = $request->input('author');
@@ -32,6 +33,6 @@ class UploadController extends Controller
         //     'content' => $content,
         //     'other_name' => $author,
         // ]);
-        
+
     }
 }

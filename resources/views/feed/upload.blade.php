@@ -51,6 +51,7 @@
                     </div>
                     <input type="submit" value="บันทึก" class="btn btn-primary">
                 </form>
+                {{$info}}
             </div>
         </div>
     </div>

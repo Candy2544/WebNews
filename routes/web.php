@@ -39,11 +39,10 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 // })->name('dashboard');
 
 
-Route::get('/department/all',[DepartmentController::class,'index']) ->name('department');
-Route::post('/department/add',[DepartmentController::class,'store']) -> name('addDepartment');
+// Route::get('/department/all',[DepartmentController::class,'index']) ->name('department');
+// Route::post('/department/add',[DepartmentController::class,'store']) -> name('addDepartment');
 Route::get('/info',[InfoController::class,'index']);
 
 Route::get('/info/all',[InfoController::class,'index']) ->name('info');
-Route::get('/info/add',[UploadController::class,'index']) -> name('addInfo');
-Route::post('/info/add',[UploadController::class,'news']) -> name('addInfo');
+Route::post('/info/add',[UploadController::class,'update']) -> name('addInfo');
 
