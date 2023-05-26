@@ -32,7 +32,7 @@
                             <td>{{$row -> content}}</td>
                             <?// เอาข้อมูลมาจาก row จาก คอลัม other_name?>
                             <td>{{$row -> other_name}}</td>
-                            <td>{{Carbon\Carbon::parse($row -> created_at -> diffForHumans())}}</td>
+                            <td>{{Carbon\Carbon::parse($row -> created_at -> diffForHumans())}}</td>   
                         </tr>
                         @endforeach
                     </tbody>

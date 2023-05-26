@@ -10,14 +10,9 @@ class InfoController extends Controller
 {
     public function index(){
 
-        // $info = DB::Info('id_info','title','content','other_name','created_at')->get();
-        // return view('feed.index', ['id_info','title','content','other_name','created_at' => $info]);
-
 
         $info = Info::all();
         return $info;
-        // $info = Info::all();
-        // return view('feed.index',[$info]);
     }
 
     public function store(Request $request){

@@ -22,7 +22,7 @@
                     <x-nav-link href="{{ route('addInfo') }}" :active="request()->routeIs('dashboard')">
                         addInfo
                     </x-nav-link>
-                </div>
+                </div>   
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">

@@ -1,6 +1,5 @@
-@import '~bootstrap';
-<link href="{{ asset('css/app.css') }}" rel="stylesheet">
-<div class="container">
+<x-app-layout>
+    <div class="container">
     <div class="py-12">
         @if(session("sucess"))
         <div class="alert-success">{{session('sucess')}}</div>
@@ -56,3 +55,4 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+</x-app-layout>
