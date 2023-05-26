@@ -13,21 +13,10 @@ class TyprInfo extends Model
 
     protected $fillable = [
         'id_type',
-        'name_type',
+        'type',
     ];
 }
-class Info extends Model
-{
-    use HasFactory;
-    use SoftDeletes;
 
-    protected $fillable = [
-        'id_info',
-        'title',
-        'content',
-        'other_name',
-    ];
- }
 
 
 

@@ -1,36 +1,5 @@
-<!--<div class="py-12">
-        <div class="container">
-            <div class="row">
-                </div>
-                <div class="col-md-8" >
-                @if(session("sucess"))
-                        <div class="alert-success">{{session('sucess')}}</div>
-                    @endif
-                    <div class="card">
-                        <div class="card-header" >แบบฟอร์ม</div>
-                            <div class="card-body">
-                                <form action="{{route('addInfo')}}" method="post">--> <!-- ตารางนี้จะทำการ action ไปที่ route addDepartment เป็นการส่งแบบ post  -->
-<!-- @csrf
-                                    <div class="from-group">
-                                        <label for="department_name">ข่าว</label> 
-                                        <input type="text" class="form-control" name="info_news">
-                                    </div>
-                                    @error('department_name') --> <!-- department_name คือ ผมลัพท์ที่ส่งกลับมาจากหน้า departmentController function store() ตอนที่เอาข้อมูลที่พิมพ์ลงไปกรองแล้ว-->
-<!-- <div class="my-2">
-                                        <span class="text-danger">{{$message}}</span>
-                                    </div>
-                                    @enderror
-                                    <br>
-                                        <input type="submit" value="บันทึก" class="btn btn-primary">
-                                </form>
-                            </div>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>-->
-
+@import '~bootstrap';
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <div class="container">
     <div class="py-12">
         @if(session("sucess"))
@@ -49,9 +18,41 @@
                         <label for="department_name">ผู้เขียน</label>
                         <input type="text" class="form-control" name="other">
                     </div>
+                    <!-- Example single danger button -->
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            Action
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Separated link</a></li>
+                        </ul>
+                    </div>
                     <input type="submit" value="บันทึก" class="btn btn-primary">
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+<form>
+    <div class="mb-3">
+        <label class="form-label" for="subject">ข่าว</label>
+        <input type="text" class="form-control" id="exampleInputEmail1">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

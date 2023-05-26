@@ -4,14 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Info;
-use Illuminate\Support\Facades\Auth;
 use PharIo\Manifest\Author;
 
 class InfoController extends Controller
 {
-    public function index($info){
+    public function index(){
+
+        // $info = DB::Info('id_info','title','content','other_name','created_at')->get();
+        // return view('feed.index', ['id_info','title','content','other_name','created_at' => $info]);
+
+
         $info = Info::all();
-        return view('feed.index',compact('info'));
+        return $info;
+        // $info = Info::all();
+        // return view('feed.index',[$info]);
     }
 
     public function store(Request $request){
@@ -27,9 +33,7 @@ class InfoController extends Controller
     }
 
     public function getinfo() {
-        $info = new Info;
         $getinfo = Info::all();
-        $filteredData = Info::where('id_info','title', 'content', 'other_name' ) -> get();
-        return view('feed.index',compact('filteredData'));
+        return view('feed.index',compact('getinfo'));
     }
 }

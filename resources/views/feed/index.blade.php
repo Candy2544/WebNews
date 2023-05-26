@@ -2,7 +2,7 @@
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             Wellcome , {{Auth::user()->name}}
-            
+        
         </h2>
     </x-slot>
 
@@ -21,11 +21,11 @@
                     </thead>
                     <tbody>
                         @php($i=1)
-                        @foreach($info as $row)
+                        @foreach($getinfo as $row)
                         <tr>
                             <td>{{$i++}}</td>
                             <?// เอาข้อมูลมาจาก row จาก คอลัม name?>
-                            <td>{{$row -> id_info}}</td>
+                            <!-- <td>{{$row -> id_info}}</td> -->
                             <?// เอาข้อมูลมาจาก row จาก คอลัม title?>
                             <td>{{$row -> title}}</td>
                             <?// เอาข้อมูลมาจาก row จาก คอลัม content?>
@@ -36,7 +36,6 @@
                         </tr>
                         @endforeach
                     </tbody>
-                    
                 </table>
             </div>
         </div>
