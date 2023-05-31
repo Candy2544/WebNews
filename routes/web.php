@@ -8,7 +8,9 @@ use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use Illuminate\Contracts\Cache\Store;
 use App\Http\Controllers\UploadController;
-
+use App\Http\Controllers\TypeInfoController;
+use App\Http\Controllers\ViewController;
+use App\View\Components\CardComponent;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,11 +35,6 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     })->name('dashboard');
 });
 
-// Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
-//     $user = DB::table('users')->get();//users ในที่นี้หมายถึงตารางที่จะนำข้อมูลมา
-//     return view('dashboard', compact('users'));
-// })->name('dashboard');
-
 //require data form database 
 Route::get('/info',[InfoController::class,'index']);
 Route::get('/info/all',[InfoController::class,'getinfo']) ->name('info');
@@ -45,3 +42,6 @@ Route::get('/info/all',[InfoController::class,'getinfo']) ->name('info');
 //upload data to database
 Route::get('/info',[UploadController::class,'index']) -> name('addInfo');
 Route::post('/info/upload',[UploadController::class,'update']) -> name('upload');
+
+//require typeinfo 
+Route ::post('/type',[TypeInfoController::class,'index']) -> name('type');
