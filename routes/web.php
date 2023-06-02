@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\InfoController;
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\DropdownController;
 use Illuminate\Support\Facades\Route;
 //path db builder
 use Illuminate\Support\Facades\DB;
@@ -36,12 +37,13 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 });
 
 //require data form database 
-Route::get('/info',[InfoController::class,'index']);
+Route::get('/info',[InfoController::class,'index'])->name('addInfo');
 Route::get('/info/all',[InfoController::class,'getinfo']) ->name('info');
 
 //upload data to database
-Route::get('/info',[UploadController::class,'index']) -> name('addInfo');
 Route::post('/info/upload',[UploadController::class,'update']) -> name('upload');
 
 //require typeinfo 
 Route ::post('/type',[TypeInfoController::class,'index']) -> name('type');
+
+Route::get('/info/upload',[UploadController::class,'dropdown']) -> name('dropdown');  

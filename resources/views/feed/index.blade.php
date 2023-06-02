@@ -5,7 +5,6 @@
         
         </h2>
     </x-slot>
-
     <div class="py-12">
         <div class="container">
             <div class="row">'
@@ -16,7 +15,6 @@
                         @foreach($getinfo as $row)
                         @include('components.card-component',['title' => $row -> title,'content' => $row -> content,
                         'other_name' => $row -> other_name,'create_at' => Carbon\Carbon::parse($row -> created_at -> diffForHumans())])
-                        
                         @endforeach
                     </tbody>
                 </table>

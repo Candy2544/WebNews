@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use App\Models\Info;
+use App\Models\TyprInfo;
 use Illuminate\Http\Request;
 use App\Http\Controllers\TypeInfoController;
 
@@ -21,19 +22,15 @@ class UploadController extends Controller
         $info->title = $request->input('subject');
         $info->content = $request->input('content');
         $info->other_name = $request->input('other');
+        $info->id_type = $request->input('dropdown');
         $info->save();
         return redirect()->route('info');
     }
 
-    public function dropdown (Request $request )
+    public function dropdown ()
     {
-        $info = new Info;
-        $info->title = $request->input('subject');
-        $info->content = $request->input('content');
-        $info->other_name = $request->input('other');
-        $info->type = $request->input('type');
-        $info->save();
-        return redirect()->route('info');
+        $typeinfo = new TyprInfo;
+        return $typeinfo;
 
     }
 }

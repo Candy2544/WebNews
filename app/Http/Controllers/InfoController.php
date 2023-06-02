@@ -4,16 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Info;
+use App\Models\TyprInfo;
 use PharIo\Manifest\Author;
 use Illuminate\Support\Facades\DB;
 
 class InfoController extends Controller
 {
     public function index(){
-
-
         $info = Info::all();
-        return $info;
+        $type = TyprInfo::all();
+        return  view('feed.upload',compact('info','type'));
     }
 
     public function store(Request $request){
