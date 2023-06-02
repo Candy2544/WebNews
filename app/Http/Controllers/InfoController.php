@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Info;
 use PharIo\Manifest\Author;
+use Illuminate\Support\Facades\DB;
 
 class InfoController extends Controller
 {
@@ -24,7 +25,6 @@ class InfoController extends Controller
             'type.unique' => 'มีข่าวนี้แล้ว'
         ]
     );
-
     }
 
     public function getinfo() {
