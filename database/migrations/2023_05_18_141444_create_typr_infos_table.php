@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('typr_infos', function (Blueprint $table) {
             $table->integer('id_type');
             $table->varchar('type');
-        
         });
     }
 
