@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('title');
             $table->text('content');
             $table->text('other_name');
+            $table->text('image');
             $table->softDeletes();
         });
     }

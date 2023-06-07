@@ -19,7 +19,7 @@
                     <x-nav-link href="{{ route('info') }}" :active="request()->routeIs('dashboard')">
                         Info
                     </x-nav-link>
-                    <x-nav-link href="{{ route('addInfo') }}" :active="request()->routeIs('dashboard')">
+                    <x-nav-link href="{{ route('showinfo') }}" :active="request()->routeIs('dashboard')">
                         addInfo
                     </x-nav-link>
                 </div>   

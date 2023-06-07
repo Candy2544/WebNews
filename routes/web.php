@@ -37,7 +37,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 });
 
 //require data form database 
-Route::get('/info',[InfoController::class,'index'])->name('addInfo');
+Route::get('/info',[InfoController::class,'index'])->name('showinfo');
 Route::get('/info/all',[InfoController::class,'getinfo']) ->name('info');
 
 //upload data to database

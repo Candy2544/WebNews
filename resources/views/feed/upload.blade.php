@@ -1,13 +1,11 @@
 <x-app-layout>
     <div class="container">
         <div class="py-12">
-            @if(session("sucess"))
-            <div class="alert-success">{{session('sucess')}}</div>
-            @endif
+            
             <div class="card">
                 <div class="card-header">แบบฟอร์ม</div>
                 <div class="card-body">
-                    <form action="{{route('upload')}}" method="post"> <!-- ตารางนี้จะทำการ action ไปที่ route addDepartment เป็นการส่งแบบ post  -->
+                    <form action="{{route('upload')}}" method="post" enctype="multipart/form-data"> <!-- ตารางนี้จะทำการ action ไปที่ route addDepartment เป็นการส่งแบบ post  -->
                         @csrf
                         <div class="from-group">
                             <label for="department_name">ข่าว</label>
@@ -18,6 +16,8 @@
                             <input type="text" class="form-control" name="other">
                         </div>
 
+                        <!-- image -->
+                        <input type="file" name="image">
 
                         <!-- Example single danger button -->
                         <div class="btn-group">
