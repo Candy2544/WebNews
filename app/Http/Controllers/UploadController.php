@@ -38,14 +38,13 @@ class UploadController extends Controller
 
                   $info->image = $path;
                   $info->save();
-          
+                    
                   return redirect()->back()->with('success', 'ภาพถูกเพิ่มเรียบร้อยแล้ว');
                 }else{
                     echo 'no';
                 }
               } catch (\Throwable $th) {
                 echo $th;
-                // return redirect()->back()->with('success', 'ภาพถูกเพิ่มเรียบร้อยแล้ว');
               }
     }
 
