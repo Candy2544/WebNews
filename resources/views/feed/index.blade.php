@@ -7,17 +7,18 @@
     </x-slot>
     <div class="py-12">
         <div class="container">
-            <div class="row">'
+            <div class="row">
                 {{session("success")}}
                 <table class="table">
                     <tbody>
-                        @php($i=1)
-                        @foreach($getinfo as $row)
-                        @include('components.card-component',['title' => $row -> title,'content' => $row -> content,
-                        'other_name' => $row -> other_name,'create_at' => Carbon\Carbon::parse($row -> created_at -> diffForHumans())])
-                        @endforeach
-
-                        
+                            @foreach($getinfo as $row)
+                                @include('components.card-component',[
+                                'title' => 'เรื่อง' . " " . $row -> title,
+                                'content' =>'เนื้อหา' . " " . $row -> content,
+                                'other_name' => 'ผู้แต่ง' . " " . $row -> other_name,   
+                                'image' => $row -> image,
+                                'create_at' =>'โพสเมื่อ' . " " . Carbon\Carbon::parse($row -> created_at -> diffForHumans())])
+                            @endforeach
                     </tbody>
                 </table>
             </div>

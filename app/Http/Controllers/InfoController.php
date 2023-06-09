@@ -29,6 +29,6 @@ class InfoController extends Controller
 
     public function getinfo() {
         $getinfo = Info::all();
-        return view('feed.index',compact('getinfo'));
+        return view('feed.index') -> with ('getinfo', $getinfo);
     }
 }

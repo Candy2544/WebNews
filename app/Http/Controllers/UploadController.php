@@ -22,13 +22,13 @@ class UploadController extends Controller
             try {
                 if ($request->hasFile('image')) {
                 //   $path = $request->image->path();
-                  $clientOriginalName = $request->image->getClientOriginalName();
-                  $newFileName = time() . $clientOriginalName;
-                  $uploadedFile = $request->file('image');
-          
-                  // Save File to local drive
-                  $path = $uploadedFile->storeAs('images', $newFileName);
-          
+                $clientOriginalName = $request->image->getClientOriginalName();
+                $newFileName = time() .'-'. $clientOriginalName;
+                $uploadedFile = $request->file('image');
+                  $destination = base_path()."/public/images";
+                // Save File to local drive
+                  $uploadedFile->move($destination, $newFileName);
+                  $path = "images/" . $newFileName;
                   //Save File to Photo table
                   $info = new Info();
                   $info->title = $request->input('subject');

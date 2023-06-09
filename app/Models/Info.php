@@ -13,6 +13,7 @@ class Info extends Model
     use SoftDeletes;
     
     protected $fillable = [
+        'id_info',
         'id_type',
         'title',
         'content',

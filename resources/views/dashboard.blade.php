@@ -7,7 +7,7 @@
 
     <div class="py-12">
         <div class="container">
-            <div class="row">'
+            <div class="row">
                 <table class="table">
                     <thead>
                         <tr>
@@ -19,7 +19,7 @@
                     </thead>
                     <tbody>
                         @php($i=1)
-                        @foreach($user as $row)
+                        @foreach($user as $row) 
                         <tr>
                             <td>{{$i++}}</td>
                             <?// เอาข้อมูลมาจาก row จาก คอลัม name?>
